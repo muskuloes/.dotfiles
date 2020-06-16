@@ -2,7 +2,7 @@
   "suggest.autoTrigger": "always",
   "diagnostic.errorSign": "✗",
   "yaml.format.enable": true,
-  "python.formatting.provider": "yapf",
+  "python.formatting.provider": "black",
   "python.jediEnabled": false,
   "html.format.enable": true,
   "prettier.disableLanguages": ["html"],

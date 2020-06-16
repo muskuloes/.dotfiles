@@ -1,0 +1,4 @@
+#!/usr/bin/env fish
+# script for nnn to open editor in a new tmux window
+tmux new-window -n (basename (pwd)) "vim (echo $argv[1..-1])"
+
