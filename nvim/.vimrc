@@ -37,6 +37,7 @@ Plug 'gaalcaras/ncm-R'
 if !has('nvim')
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'dkarter/bullets.vim'
 call plug#end()
 
 " command! -nargs=0 Prettier :CocCommand prettier.formatFile
