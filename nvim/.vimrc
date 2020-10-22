@@ -32,15 +32,14 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'jalvesaq/Nvim-R'
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
-Plug 'gaalcaras/ncm-R'
 " Vim 8 only
 if !has('nvim')
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'dkarter/bullets.vim'
+Plug 'andymass/vim-matchup'
 call plug#end()
 
-" command! -nargs=0 Prettier :CocCommand prettier.formatFile
 filetype plugin on
 
 set background=dark
@@ -83,9 +82,6 @@ let g:NERDTreeShowLineNumbers = 0
 let g:NERDTreeGitStatusWithFlags = 1
 set encoding=UTF-8
 map <silent><c-n> :NERDTreeToggle<CR>
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | echo argv()[0] | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
@@ -103,7 +99,7 @@ nnoremap tj :tabprev<cr>
 nnoremap tl :tablast<cr>
 nnoremap td :tabclose<cr>
 nnoremap <silent><f9> :w<cr>:source %<cr>
-nnoremap <silent> <c-p> :<C-u>FZF<cr>
+nnoremap <silent> <c-p> :<C-u>GFiles<cr>
 nnoremap <silent> <c-f> :<C-u>RG<cr>
 map <c-leftmouse> <nop>
 
@@ -193,4 +189,3 @@ let R_source = $HOME . '/.vim/plugged/Nvim-R/R/tmux_split.vim'
 let R_tmux_title = 'automatic'
 let R_close_term = 1
 let R_hl_term = 1
-" autocmd BufLeave *.r :normal <LocalLeader>rq
