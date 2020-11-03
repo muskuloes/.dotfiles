@@ -8,7 +8,7 @@ set -gx NNN_BMS 'u:~/Desktop/uni;w:~/Desktop/work'
 set -gx NNN_PLUG 'o:fzopen;v:imgview;u:getplugs'
 
 alias vim="nvim"
-alias n="nnn -e"
+alias n="nnn -exC"
 alias k="kubectl"
 alias r="R"
 
