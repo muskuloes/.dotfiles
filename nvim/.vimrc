@@ -70,8 +70,8 @@ augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave * set number relativenumber
   autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
-  autocmd BufEnter NERD_* setlocal nonumber norelativenumber
-  autocmd BufEnter,TermOpen,TermEnter,TermLeave term://* setlocal nonumber norelativenumber
+  autocmd BufEnter,FocusGained NERD_* setlocal nonumber norelativenumber
+  autocmd BufEnter,FocusGained,TermOpen,TermEnter,TermLeave term://* setlocal nonumber norelativenumber
 augroup END
 
 " Nerd commenter
@@ -99,7 +99,7 @@ nnoremap tj :tabprev<cr>
 nnoremap tl :tablast<cr>
 nnoremap td :tabclose<cr>
 nnoremap <silent><f9> :w<cr>:source %<cr>
-nnoremap <silent> <c-p> :<C-u>GFiles<cr>
+nnoremap <silent> <c-p> :<C-u>Files<cr>
 nnoremap <silent> <c-f> :<C-u>RG<cr>
 map <c-leftmouse> <nop>
 
