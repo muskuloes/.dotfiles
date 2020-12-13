@@ -58,6 +58,7 @@ set rtp+=~/.fzf
 set backspace=indent,eol,start
 set showbreak=↪\
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+set list
 set updatetime=1000
 set mouse=a
 set completeopt=menu,menuone,preview,noselect,noinsert
@@ -99,7 +100,7 @@ nnoremap tj :tabprev<cr>
 nnoremap tl :tablast<cr>
 nnoremap td :tabclose<cr>
 nnoremap <silent><f9> :w<cr>:source %<cr>
-nnoremap <silent> <c-p> :<C-u>Files<cr>
+nnoremap <silent> <c-p> :<C-u>GFiles<cr>
 nnoremap <silent> <c-f> :<C-u>RG<cr>
 map <c-leftmouse> <nop>
 
