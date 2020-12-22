@@ -6,6 +6,8 @@ set -gx EDITOR vim
 set -gx VISUAL ewrap
 set -gx NNN_BMS 'u:~/Desktop/uni;w:~/Desktop/work'
 set -gx NNN_PLUG 'o:fzopen;v:imgview;u:getplugs'
+set -gx FZF_DEFAULT_OPTS '--preview-window wrap --reverse'
+set -gx FZF_CTRL_T_OPTS "--preview 'bat --style=numbers --color=always --line-range :500 {}'"
 
 alias vim="nvim"
 alias n="nnn -exC"

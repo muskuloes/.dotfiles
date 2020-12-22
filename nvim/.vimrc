@@ -38,6 +38,8 @@ if !has('nvim')
 endif
 Plug 'dkarter/bullets.vim'
 Plug 'andymass/vim-matchup'
+" Plug 'sheerun/vim-polyglot'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 filetype plugin on
@@ -54,7 +56,7 @@ set shiftround
 set splitbelow
 set splitright
 set nohls
-set rtp+=~/.fzf
+set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
 set backspace=indent,eol,start
 set showbreak=↪\
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
@@ -172,13 +174,13 @@ let g:coc_filetype_map = {
   \ }
 let g:fzf_preview_window = 'right:60%'
 let g:fzf_layout = {'window': {'width': 0.8, 'height': 0.8}}
-let $FZF_DEFAULT_OPTS = '--reverse'
+let $FZF_DEFAULT_OPTS = '--preview-window wrap --reverse'
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
   let reload_command = printf(command_fmt, '{q}')
   let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec, "right:hidden"), a:fullscreen)
 endfunction
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
