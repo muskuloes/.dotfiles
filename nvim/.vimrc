@@ -102,7 +102,7 @@ nnoremap tj :tabprev<cr>
 nnoremap tl :tablast<cr>
 nnoremap td :tabclose<cr>
 nnoremap <silent><f9> :w<cr>:source %<cr>
-nnoremap <silent> <c-p> :<C-u>GFiles<cr>
+nnoremap <silent> <expr> <c-p> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":GFiles\<cr>"
 nnoremap <silent> <c-f> :<C-u>RG<cr>
 map <c-leftmouse> <nop>
 
