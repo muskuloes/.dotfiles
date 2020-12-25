@@ -6,6 +6,7 @@ set -gx EDITOR vim
 set -gx VISUAL ewrap
 set -gx NNN_BMS 'u:~/Desktop/uni;w:~/Desktop/work'
 set -gx NNN_PLUG 'o:fzopen;v:imgview;u:getplugs'
+set -gx NNN_COLORS '2134'
 set -gx FZF_DEFAULT_OPTS '--preview-window wrap --reverse'
 set -gx FZF_CTRL_T_OPTS "--preview 'bat --style=numbers --color=always --line-range :500 {}'"
 
@@ -13,7 +14,10 @@ alias vim="nvim"
 alias n="nnn -exC"
 alias k="kubectl"
 alias r="R"
+
+# exa and bat need to be installed
 alias ls="exa --long --header --git --group"
+alias cat="bat"
 
 set -g fish_user_paths "/home/linuxbrew/.linuxbrew/sbin" $fish_user_paths
 
