@@ -1,7 +1,7 @@
 set -x TERM xterm-256color
 set -x CDPATH . ~ ~/Desktop
 
-set -gx PATH /snap/bin /usr/local/go/bin $HOME/bin /home/linuxbrew/.linuxbrew/bin $HOME/.local/bin $HOME/.krew/bin $HOME/.kubectx $HOME/go/bin $HOME/.yarn/bin $PATH
+set -gx PATH /snap/bin /usr/local/go/bin $HOME/bin /home/linuxbrew/.linuxbrew/bin $HOME/.local/bin $HOME/.krew/bin $HOME/.kubectx $HOME/go/bin $HOME/.cargo/bin $HOME/.yarn/bin $PATH
 set -gx EDITOR vim
 set -gx VISUAL ewrap
 set -gx NNN_BMS 'u:~/Desktop/uni;w:~/Desktop/work'
