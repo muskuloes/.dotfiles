@@ -7,7 +7,8 @@ set -gx VISUAL ewrap
 set -gx NNN_BMS 'u:~/Desktop/uni;w:~/Desktop/work'
 set -gx NNN_PLUG 'o:fzopen;v:imgview;u:getplugs'
 set -gx NNN_COLORS '2134'
-set -gx FZF_DEFAULT_OPTS '--preview-window wrap --reverse'
+set -gx FZF_DEFAULT_COMMAND 'fd --type f'
+set -gx FZF_DEFAULT_OPTS '--height 40% --bind 'ctrl-/:toggle-preview' --preview-window wrap --reverse'
 set -gx FZF_CTRL_T_OPTS "--preview 'bat --style=numbers --color=always --line-range :500 {}'"
 
 alias vim="nvim"
