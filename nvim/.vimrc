@@ -38,8 +38,10 @@ if !has('nvim')
 endif
 Plug 'dkarter/bullets.vim'
 Plug 'andymass/vim-matchup'
-" Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
+" for tsx syntax highlighting
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 call plug#end()
 
 filetype plugin on
