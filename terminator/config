@@ -1,0 +1,35 @@
+[global_config]
+  focus = system
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, MavenPluginURLHandler, LaunchpadBugURLHandler
+  always_split_with_profile = True
+  title_use_system_font = False
+  title_font = Fira Code 9
+[keybindings]
+  split_horiz = ""
+  split_vert = ""
+[profiles]
+  [[default]]
+    background_color = "#282828"
+    background_darkness = 0.95
+    background_type = transparent
+    cursor_blink = False
+    cursor_color = "#aaaaaa"
+    font = Fira Code Medium 15
+    foreground_color = "#ebdbb2"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
+    use_custom_command = True
+    custom_command = tmux attach || tmux new
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+      title = "MUSKULOES"
+[plugins]
