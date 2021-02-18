@@ -42,6 +42,7 @@ Plug 'Yggdroot/indentLine'
 " for tsx syntax highlighting
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 filetype plugin on
