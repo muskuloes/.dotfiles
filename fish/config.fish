@@ -12,7 +12,7 @@ set -gx FZF_DEFAULT_OPTS '--height 40% --bind 'ctrl-/:toggle-preview' --preview-
 set -gx FZF_CTRL_T_OPTS "--preview 'bat --style=numbers --color=always --line-range :500 {}'"
 
 alias vim="nvim"
-alias n="nnn -exC"
+alias n="nnn -ex"
 alias k="kubectl"
 alias r="R"
 
