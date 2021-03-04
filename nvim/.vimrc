@@ -43,6 +43,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'mhinz/vim-startify'
+Plug 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular'
 call plug#end()
 
 filetype plugin on
