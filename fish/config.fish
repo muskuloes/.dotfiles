@@ -5,7 +5,7 @@ set -gx PATH $PATH /snap/bin /usr/local/go/bin $HOME/bin /home/linuxbrew/.linuxb
 set -gx EDITOR vim
 set -gx VISUAL ewrap
 set -gx NNN_BMS 'u:~/Desktop/uni;w:~/Desktop/work'
-set -gx NNN_PLUG 'o:fzopen;v:imgview;u:getplugs'
+set -gx NNN_PLUG 'o:fzopen;v:imgview;u:getplugs;f:fzcd'
 set -gx NNN_COLORS '2134'
 set -gx FZF_DEFAULT_COMMAND 'fd --type f'
 set -gx FZF_DEFAULT_OPTS '--height 40% --bind 'ctrl-/:toggle-preview' --preview-window wrap --reverse'
