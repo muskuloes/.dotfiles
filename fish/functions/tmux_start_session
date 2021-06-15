@@ -1,0 +1,7 @@
+#!/usr/bin/env fish
+
+if tmux has-session -t default &> /dev/null
+    tmux new-window -t default
+else
+    tmux new-session -s default -c $PWD
+end

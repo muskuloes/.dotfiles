@@ -320,7 +320,7 @@ shell:
   args:
     - --login
     - -c
-    - "tmux attach || tmux new"
+    - "tmux_start_session"
 # Startup directory
 #
 # Directory the shell is started in. If this is unset, or `None`, the working

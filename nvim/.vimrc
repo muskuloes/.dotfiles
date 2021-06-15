@@ -26,7 +26,7 @@ Plug 'chrisbra/csv.vim'
 Plug 'cespare/vim-toml'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/webapi-vim'
-Plug 'airblade/vim-rooter'
+" Plug 'airblade/vim-rooter'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 " Plug 'edkolev/tmuxline.vim' generated status line
 Plug 'jalvesaq/Nvim-R'
