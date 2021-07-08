@@ -48,25 +48,25 @@
         ),
     ),
     focus_right: (
-        code: Right,
+        code: Char('l'),
         modifiers: (
             bits: 0,
         ),
     ),
     focus_left: (
-        code: Left,
+        code: Char('h'),
         modifiers: (
             bits: 0,
         ),
     ),
     focus_above: (
-        code: Up,
+        code: Char('k'),
         modifiers: (
             bits: 0,
         ),
     ),
     focus_below: (
-        code: Down,
+        code: Char('j'),
         modifiers: (
             bits: 0,
         ),
