@@ -48,33 +48,33 @@
         ),
     ),
     focus_right: (
-        code: Char('l'),
+        code: Right,
         modifiers: (
             bits: 0,
         ),
     ),
     focus_left: (
-        code: Char('h'),
+        code: Left,
         modifiers: (
             bits: 0,
         ),
     ),
     focus_above: (
-        code: Char('k'),
+        code: Up,
         modifiers: (
             bits: 0,
         ),
     ),
     focus_below: (
-        code: Char('j'),
+        code: Down,
         modifiers: (
             bits: 0,
         ),
     ),
     exit: (
-        code: Char('Q'),
+        code: Char('c'),
         modifiers: (
-            bits: 1,
+            bits: 2,
         ),
     ),
     exit_popup: (
@@ -246,7 +246,7 @@
         ),
     ),
     stash_open: (
-        code: Char('l'),
+        code: Right,
         modifiers: (
             bits: 0,
         ),
