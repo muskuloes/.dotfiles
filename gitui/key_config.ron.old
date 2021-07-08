@@ -32,55 +32,37 @@
     tab_toggle_reverse: (
         code: BackTab,
         modifiers: (
-            bits: 0,
-        ),
-    ),
-    tab_toggle_reverse_windows: (
-        code: BackTab,
-        modifiers: (
             bits: 1,
         ),
     ),
-    focus_workdir: (
-        code: Char('w'),
-        modifiers: (
-            bits: 0,
-        ),
-    ),
-    focus_stage: (
-        code: Char('s'),
-        modifiers: (
-            bits: 0,
-        ),
-    ),
     focus_right: (
-        code: Right,
+        code: Char('l'),
         modifiers: (
             bits: 0,
         ),
     ),
     focus_left: (
-        code: Left,
+        code: Char('h'),
         modifiers: (
             bits: 0,
         ),
     ),
     focus_above: (
-        code: Up,
+        code: Char('k'),
         modifiers: (
             bits: 0,
         ),
     ),
     focus_below: (
-        code: Down,
+        code: Char('j'),
         modifiers: (
             bits: 0,
         ),
     ),
     exit: (
-        code: Char('c'),
+        code: Char('Q'),
         modifiers: (
-            bits: 2,
+            bits: 1,
         ),
     ),
     exit_popup: (
@@ -102,19 +84,19 @@
         ),
     ),
     open_help: (
-        code: Char('h'),
+        code: F(1),
         modifiers: (
             bits: 0,
         ),
     ),
     move_left: (
-        code: Left,
+        code: Char('h'),
         modifiers: (
             bits: 0,
         ),
     ),
     move_right: (
-        code: Right,
+        code: Char('l'),
         modifiers: (
             bits: 0,
         ),
@@ -132,13 +114,13 @@
         ),
     ),
     move_up: (
-        code: Up,
+        code: Char('k'),
         modifiers: (
             bits: 0,
         ),
     ),
     move_down: (
-        code: Down,
+        code: Char('j'),
         modifiers: (
             bits: 0,
         ),
@@ -156,13 +138,13 @@
         ),
     ),
     shift_up: (
-        code: Up,
+        code: Char('K'),
         modifiers: (
             bits: 1,
         ),
     ),
     shift_down: (
-        code: Down,
+        code: Char('J'),
         modifiers: (
             bits: 1,
         ),
@@ -197,6 +179,18 @@
             bits: 0,
         ),
     ),
+    diff_stage_lines: (
+        code: Char('s'),
+        modifiers: (
+            bits: 0,
+        ),
+    ),
+    diff_reset_lines: (
+        code: Char('d'),
+        modifiers: (
+            bits: 0,
+        ),
+    ),
     stashing_save: (
         code: Char('s'),
         modifiers: (
@@ -216,7 +210,7 @@
         ),
     ),
     stash_open: (
-        code: Right,
+        code: Char('l'),
         modifiers: (
             bits: 0,
         ),
@@ -252,7 +246,43 @@
         ),
     ),
     create_branch: (
+        code: Char('c'),
+        modifiers: (
+            bits: 0,
+        ),
+    ),
+    rename_branch: (
+        code: Char('r'),
+        modifiers: (
+            bits: 0,
+        ),
+    ),
+    select_branch: (
         code: Char('b'),
+        modifiers: (
+            bits: 0,
+        ),
+    ),
+    delete_branch: (
+        code: Char('D'),
+        modifiers: (
+            bits: 1,
+        ),
+    ),
+    push: (
+        code: Char('p'),
+        modifiers: (
+            bits: 0,
+        ),
+    ),
+    force_push: (
+        code: Char('P'),
+        modifiers: (
+            bits: 1,
+        ),
+    ),
+    pull: (
+        code: Char('f'),
         modifiers: (
             bits: 0,
         ),
