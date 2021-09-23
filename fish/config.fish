@@ -1,10 +1,10 @@
 set -x TERM xterm-256color
-set -x CDPATH . ~ ~/Desktop
+set -x CDPATH . $HOME $HOME/Desktop
 
 set -gx PATH $PATH /snap/bin /usr/local/go/bin $HOME/bin /home/linuxbrew/.linuxbrew/bin $HOME/.local/bin $HOME/.krew/bin $HOME/.kubectx $HOME/go/bin $HOME/.cargo/bin $HOME/.yarn/bin
 set -gx EDITOR vim
 set -gx VISUAL ewrap
-set -gx NNN_BMS 'u:~/Desktop/uni;w:~/Desktop/work'
+set -gx NNN_BMS 'u:$HOME/Desktop/uni;w:$HOME/Desktop/work'
 set -gx NNN_PLUG 'o:fzopen;v:imgview;u:getplugs;f:fzcd'
 set -gx NNN_COLORS '2134'
 
@@ -22,9 +22,7 @@ alias r="R"
 alias ls="exa --long --header --git --group"
 alias cat="bat"
 
-set -g fish_user_paths "/home/linuxbrew/.linuxbrew/sbin" $fish_user_paths
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-eval /home/muskuloes/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+eval $HOME/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
