@@ -1,7 +1,6 @@
 let mapleader="\<space>"
 let maplocalleader ="\<space>"
 
-
 call plug#begin()
 Plug 'rust-lang/rust.vim'
 Plug 'vim-airline/vim-airline'
@@ -46,6 +45,7 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'mhinz/vim-startify'
 " Plug 'plasticboy/vim-markdown'
 Plug 'godlygeek/tabular'
+Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 filetype plugin on
@@ -85,6 +85,7 @@ augroup numbertoggle
   endif
 augroup END
 
+
 " Nerd commenter
 let g:NERDSpaceDelims = 1
 
@@ -114,6 +115,12 @@ nnoremap <silent><expr><c-p> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').
 nnoremap <silent><c-f> :<C-u>RG<cr>
 map <c-leftmouse> <nop>
 
+" coc
+let g:coc_global_extensions = ['coc-json', 'coc-yaml', 'coc-tsserver', 'coc-sh',  'coc-go', 'coc-vetur', 'coc-rust-analyzer', 'coc-pyright', 'coc-markdownlint', 'coc-elixir', 'coc-css']
+let g:coc_filetype_map = {
+  \ 'htmldjango': 'html',
+  \ }
+autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', 'setup.cfg', 'setup.py', 'pyproject.toml', 'pyrightconfig.json', 'Pipfile']
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
@@ -178,10 +185,7 @@ nnoremap <silent><space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><space>p  :<C-u>CocListResume<CR>
 
-let g:rustfmt_autosave = 1
-let g:coc_filetype_map = {
-  \ 'htmldjango': 'html',
-  \ }
+" fzf
 let g:fzf_preview_window = ['down:60%:hidden', 'ctrl-/']
 let g:fzf_layout = {'window': {'width': 0.8, 'height': 0.8}}
 let $FZF_DEFAULT_OPTS = '--preview-window wrap --reverse'
@@ -203,3 +207,11 @@ let R_tmux_title = 'automatic'
 let R_close_term = 1
 let R_hl_term = 1
 let R_pdfviewer = 'evince'
+
+" Rust
+let g:rustfmt_autosave = 1
+
+" Floaterm
+let g:floaterm_keymap_toggle = '<F12>'
+let g:floaterm_width = 0.8
+let g:floaterm_height = 0.8

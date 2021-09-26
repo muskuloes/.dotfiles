@@ -1,17 +1,26 @@
 {
   "suggest.autoTrigger": "always",
   "diagnostic.errorSign": "✗",
-  "yaml.format.enable": true,
   "python.formatting.provider": "black",
-  "python.jediEnabled": false,
-  "html.format.enable": true,
-  "prettier.disableLanguages": ["html"],
   "languageserver": {
     "bash": {
       "command": "bash-language-server",
-      "args": ["start"],
-      "filetypes": ["sh"],
-      "ignoredRootPaths": ["~"]
+      "args": [
+        "start"
+      ],
+      "filetypes": [
+        "sh"
+      ],
+      "ignoredRootPaths": [
+        "~"
+      ]
+    },
+    "efm": {
+      "command": "efm-langserver",
+      "args": [],
+      "filetypes": [
+        "vim"
+      ]
     }
   }
 }
