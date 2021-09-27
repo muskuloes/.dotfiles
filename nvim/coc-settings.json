@@ -2,6 +2,7 @@
   "suggest.autoTrigger": "always",
   "diagnostic.errorSign": "✗",
   "python.formatting.provider": "black",
+  "yaml.format.enable": true,
   "languageserver": {
     "bash": {
       "command": "bash-language-server",
