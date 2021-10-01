@@ -46,6 +46,7 @@ Plug 'mhinz/vim-startify'
 " Plug 'plasticboy/vim-markdown'
 Plug 'godlygeek/tabular'
 Plug 'voldikss/vim-floaterm'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 call plug#end()
 
 filetype plugin on
@@ -157,15 +158,17 @@ endfunction
 command! -nargs=0 Format :call CocAction('format')
 
 " Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
+
+autocmd BufWritePre *.py :call CocAction('runCommand', 'editor.action.organizeImport')
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings using CoCList:
 " Show all diagnostics.
@@ -215,3 +218,13 @@ let g:rustfmt_autosave = 1
 let g:floaterm_keymap_toggle = '<F12>'
 let g:floaterm_width = 0.8
 let g:floaterm_height = 0.8
+
+
+" vim-visual-multi
+let g:VM_maps = {}
+let g:VM_maps['Find Under']         = '<C-d>'
+let g:VM_maps['Find Subword Under'] = '<C-d>'
+
+nmap   <C-LeftMouse>         <Plug>(VM-Mouse-Cursor)
+nmap   <C-RightMouse>        <Plug>(VM-Mouse-Word)
+nmap   <M-C-RightMouse>      <Plug>(VM-Mouse-Column)

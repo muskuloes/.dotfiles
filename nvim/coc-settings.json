@@ -7,6 +7,14 @@
     "kubernetes": "/*.yaml"
   },
   "python.pythonPath": "~/.local/bin/py",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "python",
+    "json",
+    "javascript",
+    "typescript",
+    "rust",
+    "elixir"
+  ],
   "languageserver": {
     "bash": {
       "command": "bash-language-server",
