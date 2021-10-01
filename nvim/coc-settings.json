@@ -1,8 +1,12 @@
 {
   "suggest.autoTrigger": "always",
   "diagnostic.errorSign": "✗",
-  "python.formatting.provider": "black",
+  "python.formatting.provider": "yapf",
   "yaml.format.enable": true,
+  "yaml.schemas": {
+    "kubernetes": "/*.yaml"
+  },
+  "python.pythonPath": "~/.local/bin/py",
   "languageserver": {
     "bash": {
       "command": "bash-language-server",

@@ -120,7 +120,7 @@ let g:coc_global_extensions = ['coc-json', 'coc-yaml', 'coc-tsserver', 'coc-sh',
 let g:coc_filetype_map = {
   \ 'htmldjango': 'html',
   \ }
-autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', 'setup.cfg', 'setup.py', 'pyproject.toml', 'pyrightconfig.json', 'Pipfile']
+autocmd FileType python let b:coc_root_patterns = ['Pipfile']
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
