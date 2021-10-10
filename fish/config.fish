@@ -1,7 +1,7 @@
 set -x TERM xterm-256color
 set -x CDPATH . $HOME $HOME/Desktop
 
-set -gx PATH $PATH /snap/bin /usr/local/go/bin $HOME/bin /home/linuxbrew/.linuxbrew/bin $HOME/.local/bin $HOME/.krew/bin $HOME/.kubectx $HOME/go/bin $HOME/.cargo/bin $HOME/.yarn/bin
+set -gx PATH $PATH /snap/bin /usr/local/go/bin $HOME/bin /home/linuxbrew/.linuxbrew/bin $HOME/.local/bin $HOME/.krew/bin $HOME/.kubectx $HOME/go/bin $HOME/.cargo/bin $HOME/.yarn/bin $HOME/.luarocks/bin
 set -gx EDITOR vim
 set -gx VISUAL ewrap
 set -gx NNN_BMS 'u:$HOME/Desktop/uni;w:$HOME/Desktop/work'
@@ -26,3 +26,8 @@ alias cat="bat"
 # !! Contents within this block are managed by 'conda init' !!
 eval $HOME/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
+
+
+set -gx LUA_PATH '/home/linuxbrew/.linuxbrew/Cellar/luarocks/3.7.0/share/lua/5.4/?.lua;/home/linuxbrew/.linuxbrew/share/lua/5.4/?.lua;/home/linuxbrew/.linuxbrew/share/lua/5.4/?/init.lua;/home/linuxbrew/.linuxbrew/lib/lua/5.4/?.lua;/home/linuxbrew/.linuxbrew/lib/lua/5.4/?/init.lua;./?.lua;./?/init.lua;/home/muskuloes/.luarocks/share/lua/5.4/?.lua;/home/muskuloes/.luarocks/share/lua/5.4/?/init.lua'
+
+set -gx LUA_CPATH '/home/linuxbrew/.linuxbrew/lib/lua/5.4/?.so;/home/linuxbrew/.linuxbrew/lib/lua/5.4/loadall.so;./?.so;/home/muskuloes/.luarocks/lib/lua/5.4/?.so'

@@ -117,7 +117,7 @@ nnoremap <silent><c-f> :<C-u>RG<cr>
 map <c-leftmouse> <nop>
 
 " coc
-let g:coc_global_extensions = ['coc-json', 'coc-yaml', 'coc-tsserver', 'coc-sh',  'coc-go', 'coc-vetur', 'coc-rust-analyzer', 'coc-pyright', 'coc-markdownlint', 'coc-elixir', 'coc-css']
+let g:coc_global_extensions = ['coc-json', 'coc-yaml', 'coc-tsserver', 'coc-sh',  'coc-go', 'coc-vetur', 'coc-rust-analyzer', 'coc-pyright', 'coc-markdownlint', 'coc-elixir', 'coc-css', 'coc-prettier', 'coc-emmet']
 let g:coc_filetype_map = {
   \ 'htmldjango': 'html',
   \ }
