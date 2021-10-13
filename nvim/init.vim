@@ -6,16 +6,10 @@ Plug 'rust-lang/rust.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdcommenter'
-Plug 'preservim/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-" Plug 'liuchengxu/nerdtree-dash'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'xolox/vim-misc'
 Plug 'jiangmiao/auto-pairs'
 Plug 'morhetz/gruvbox'
@@ -26,7 +20,6 @@ Plug 'chrisbra/csv.vim'
 Plug 'cespare/vim-toml'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/webapi-vim'
-" Plug 'airblade/vim-rooter'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 " Plug 'edkolev/tmuxline.vim' generated status line
 Plug 'jalvesaq/Nvim-R'
@@ -47,14 +40,18 @@ Plug 'mhinz/vim-startify'
 Plug 'godlygeek/tabular'
 Plug 'voldikss/vim-floaterm'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'fannheyward/telescope-coc.nvim'
 call plug#end()
 
-filetype plugin on
+lua require("muskuloes")
 
+filetype plugin on
 set background=dark
 set clipboard+=unnamedplus
-colorscheme gruvbox
-highlight Normal guibg=NONE ctermbg=NONE
 set autoindent
 set expandtab
 set softtabstop=2
@@ -63,7 +60,8 @@ set shiftround
 set splitbelow
 set splitright
 set nohls
-set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+set encoding=UTF-8
+set wrap
 set backspace=indent,eol,start
 set showbreak=↪\
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
@@ -73,12 +71,29 @@ set mouse=a
 set completeopt=menu,menuone,preview,noselect,noinsert
 set cursorline
 set cursorcolumn
+set termguicolors
 
-let g:airline_theme='base16'
+colorscheme gruvbox
+highlight Normal guibg=NONE ctermbg=NONE
+highlight TelescopeSelection      guifg=#D79921 gui=bold " Selected item
+highlight TelescopeNormal         guibg=#00000           " Floating windows created by telescope
+
+" Border highlight groups
+highlight TelescopeBorder         guifg=#ffffff
+highlight TelescopePromptBorder   guifg=#ffffff
+highlight TelescopeResultsBorder  guifg=#ffffff
+highlight TelescopePreviewBorder  guifg=#ffffff
+
+" Highlight characters your input matches
+highlight TelescopeMatching       guifg=#90ee90
+
+autocmd! FileType TelescopeResults setlocal nofoldenable
+
+let g:airline_theme='wombat'
 
 augroup numbertoggle
   autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set number relativenumber
+  " autocmd BufEnter,FocusGained,InsertLeave * set number relativenumber
   autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
   autocmd BufEnter,FocusGained NERD_* setlocal nonumber norelativenumber
   if has("nvim")
@@ -86,16 +101,11 @@ augroup numbertoggle
   endif
 augroup END
 
+autocmd User TelescopePreviewerLoaded setlocal nonumber norelativenumber
+
 
 " Nerd commenter
 let g:NERDSpaceDelims = 1
-
-" Nerd tree
-let g:NERDTreeShowLineNumbers = 0
-let g:NERDTreeGitStatusWithFlags = 1
-set encoding=UTF-8
-map <silent><c-n> :NERDTreeToggle<CR>
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
@@ -112,9 +122,14 @@ nnoremap tj :tabprev<cr>
 nnoremap tl :tablast<cr>
 nnoremap td :tabclose<cr>
 nnoremap <silent><f9> :w<cr>:source %<cr>
-nnoremap <silent><expr><c-p> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":GFiles\<cr>"
-nnoremap <silent><c-f> :<C-u>RG<cr>
-map <c-leftmouse> <nop>
+nnoremap <silent><c-p> <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <silent><c-f> <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <silent><c-n> <cmd>lua require('telescope.builtin').file_browser({depth=3})<cr>
+nnoremap <leader>/ <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>
+nnoremap <leader>ec <cmd>lua require('telescope.builtin').file_browser({cwd="~/.config/nvim"})<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+" map <c-leftmouse> <nop>
 
 " coc
 let g:coc_global_extensions = ['coc-json', 'coc-yaml', 'coc-tsserver', 'coc-sh',  'coc-go', 'coc-vetur', 'coc-rust-analyzer', 'coc-pyright', 'coc-markdownlint', 'coc-elixir', 'coc-css', 'coc-prettier', 'coc-emmet']
@@ -187,19 +202,6 @@ nnoremap <silent><space>j  :<C-u>CocNext<CR>
 nnoremap <silent><space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><space>p  :<C-u>CocListResume<CR>
-
-" fzf
-let g:fzf_preview_window = ['down:60%:hidden', 'ctrl-/']
-let g:fzf_layout = {'window': {'width': 0.8, 'height': 0.8}}
-let $FZF_DEFAULT_OPTS = '--preview-window wrap --reverse'
-function! RipgrepFzf(query, fullscreen)
-  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
-  let initial_command = printf(command_fmt, shellescape(a:query))
-  let reload_command = printf(command_fmt, '{q}')
-  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec, 'down:hidden', 'ctrl-/'), a:fullscreen)
-endfunction
-command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 " Nvim-R settings
 let R_assign = 2
