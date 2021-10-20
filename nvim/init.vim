@@ -123,7 +123,7 @@ nnoremap <silent><c-p> <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <silent><c-f> <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <silent><c-n> <cmd>lua require('telescope.builtin').file_browser({depth=3})<cr>
 nnoremap <leader>/ <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>
-nnoremap <leader>ec <cmd>lua require('telescope.builtin').file_browser({cwd="~/.config/nvim"})<cr>
+nnoremap <leader>ec <cmd>lua require('telescope.builtin').file_browser({cwd="$DOTFILES"})<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 " map <c-leftmouse> <nop>
@@ -201,28 +201,31 @@ nnoremap <silent><space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><space>p  :<C-u>CocListResume<CR>
 
 " Nvim-R settings
-let R_assign = 2
+let R_assign     = 2
 let R_notmuxconf = 1
-let R_in_buffer = 0
-let R_source = $HOME . '/.vim/plugged/Nvim-R/R/tmux_split.vim'
+let R_in_buffer  = 0
+let R_source     = $HOME . '/.vim/plugged/Nvim-R/R/tmux_split.vim'
 let R_tmux_title = 'automatic'
 let R_close_term = 1
-let R_hl_term = 1
-let R_pdfviewer = 'evince'
+let R_hl_term    = 1
+let R_pdfviewer  = 'evince'
 
 " Rust
 let g:rustfmt_autosave = 1
 
 " Floaterm
-let g:floaterm_keymap_toggle = '<F12>'
-let g:floaterm_width = 0.8
-let g:floaterm_height = 0.8
+let g:floaterm_keymap_new    = '<f5>'
+let g:floaterm_keymap_prev   = '<f6>'
+let g:floaterm_keymap_next   = '<f7>'
+let g:floaterm_keymap_toggle = '<f12>'
+let g:floaterm_width         = 0.8
+let g:floaterm_height        = 0.8
 
 
 " vim-visual-multi
-let g:VM_maps = {}
-let g:VM_maps['Find Under']         = '<C-d>'
-let g:VM_maps['Find Subword Under'] = '<C-d>'
+let g:VM_maps                       = {}
+let g:VM_maps['Find Under']         = '<c-d>'
+let g:VM_maps['Find Subword Under'] = '<c-d>'
 
 nmap   <C-LeftMouse>         <Plug>(VM-Mouse-Cursor)
 nmap   <C-RightMouse>        <Plug>(VM-Mouse-Word)

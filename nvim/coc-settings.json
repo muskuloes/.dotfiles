@@ -6,7 +6,6 @@
   "yaml.schemas": {
     "kubernetes": "/*.yaml"
   },
-  "python.pythonPath": "~/.local/bin/py",
   "coc.preferences.formatOnSaveFiletypes": [
     "python",
     "json",
@@ -18,28 +17,18 @@
   "languageserver": {
     "bash": {
       "command": "bash-language-server",
-      "args": [
-        "start"
-      ],
-      "filetypes": [
-        "sh"
-      ],
-      "ignoredRootPaths": [
-        "~"
-      ]
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
     },
     "efm": {
       "command": "efm-langserver",
       "args": [],
-      "filetypes": [
-        "vim"
-      ]
+      "filetypes": ["vim"]
     },
     "lua": {
       "command": "lua-lsp",
-      "filetypes": [
-        "lua"
-      ]
+      "filetypes": ["lua"]
     }
   }
 }

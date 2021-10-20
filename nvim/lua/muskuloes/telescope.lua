@@ -11,6 +11,7 @@ require("telescope").setup({
         qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
 
         sorting_strategy = "ascending",
+        preview = false,
 
         layout_config = {
           horizontal = {
