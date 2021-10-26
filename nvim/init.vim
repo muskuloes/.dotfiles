@@ -95,7 +95,6 @@ augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave * set number relativenumber
   autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
-  autocmd BufEnter,FocusGained NERD_* setlocal nonumber norelativenumber
   if has("nvim")
     autocmd BufEnter,FocusGained,TermOpen,TermEnter,TermLeave term://* setlocal nonumber norelativenumber
   endif
