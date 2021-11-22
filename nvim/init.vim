@@ -45,6 +45,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'fannheyward/telescope-coc.nvim'
+" Using vim-plug
+Plug 'elixir-editors/vim-elixir'
 call plug#end()
 
 lua require("muskuloes")
@@ -74,6 +76,10 @@ set cursorcolumn
 set termguicolors
 
 colorscheme gruvbox
+
+autocmd! FileType TelescopeResults setlocal nofoldenable
+autocmd! User TelescopePreviewerLoaded setlocal wrap
+
 highlight Normal guibg=NONE ctermbg=NONE
 highlight TelescopeSelection      guifg=#D79921 gui=bold " Selected item
 highlight TelescopeNormal         guibg=#00000           " Floating windows created by telescope
@@ -86,8 +92,6 @@ highlight TelescopePreviewBorder  guifg=#ffffff
 
 " Highlight characters your input matches
 highlight TelescopeMatching       guifg=#90ee90
-
-autocmd! FileType TelescopeResults setlocal nofoldenable
 
 let g:airline_theme='wombat'
 
