@@ -1,6 +1,8 @@
 set -x TERM xterm-256color
 set -x CDPATH . $HOME $HOME/Desktop
 
+
+set -gx PKG_CONFIG_PATH /usr/lib/x86_64-linux-gnu/pkgconfig
 set -gx PYENV_ROOT $HOME/.pyenv
 set -gx PATH $PATH /snap/bin /usr/local/go/bin $HOME/bin /home/linuxbrew/.linuxbrew/bin $HOME/.local/bin $HOME/.krew/bin $HOME/.kubectx $HOME/go/bin $HOME/.cargo/bin $HOME/.yarn/bin $HOME/.luarocks/bin $PYENV_ROOT/bin
 set -gx DOTFILES $HOME/Desktop/dev/dotfiles
