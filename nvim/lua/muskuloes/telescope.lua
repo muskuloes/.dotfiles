@@ -4,7 +4,9 @@ local action_layout = require("telescope.actions.layout")
 require("telescope").setup({
     defaults = {
         prompt_prefix = "🔍 ",
+        selection_caret = "❯ ",
         color_devicons = true,
+        winblend = 0,
 
         preview = { hide_on_startup = true, timeout=1000 },
         file_sorter = require("telescope.sorters").get_fzf_sorter,

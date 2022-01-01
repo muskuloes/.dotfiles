@@ -47,6 +47,8 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'fannheyward/telescope-coc.nvim'
 " Using vim-plug
 Plug 'elixir-editors/vim-elixir'
+Plug 'mkitt/tabline.vim'
+Plug 'jpalardy/vim-slime'
 call plug#end()
 
 lua require("muskuloes")
@@ -202,6 +204,14 @@ nnoremap <silent><space>j  :<C-u>CocNext<CR>
 nnoremap <silent><space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><space>p  :<C-u>CocListResume<CR>
+
+" Slime config
+xmap <leader>l <Plug>SlimeRegionSend
+nmap <leader>l <Plug>SlimeParagraphSend
+nmap <c-c>v    <Plug>SlimeConfig
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+let g:slime_no_mappings = 1
 
 " Nvim-R settings
 let R_assign     = 2
