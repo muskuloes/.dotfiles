@@ -6,7 +6,7 @@ set -gx PKG_CONFIG_PATH /usr/lib/x86_64-linux-gnu/pkgconfig
 set -gx PYENV_ROOT $HOME/.pyenv
 set -gx PATH $PATH /snap/bin /usr/local/go/bin $HOME/bin /home/linuxbrew/.linuxbrew/bin $HOME/.local/bin $HOME/.krew/bin $HOME/.kubectx $HOME/go/bin $HOME/.cargo/bin $HOME/.yarn/bin $HOME/.luarocks/bin $PYENV_ROOT/bin
 set -gx DOTFILES $HOME/Desktop/dev/dotfiles
-set -gx EDITOR vim
+set -gx EDITOR nvim
 set -gx VISUAL ewrap
 set -gx NNN_BMS 'u:$HOME/Desktop/uni;w:$HOME/Desktop/work'
 set -gx NNN_PLUG 'o:fzopen;v:imgview;u:getplugs;f:fzcd'
