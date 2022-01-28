@@ -43,6 +43,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'fannheyward/telescope-coc.nvim'
 " Using vim-plug
@@ -76,6 +77,7 @@ set completeopt=menu,menuone,preview,noselect,noinsert
 set cursorline
 set cursorcolumn
 set termguicolors
+set number relativenumber
 
 colorscheme gruvbox
 
@@ -97,14 +99,14 @@ highlight TelescopeMatching       guifg=#90ee90
 
 let g:airline_theme='wombat'
 
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set number relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
-  if has("nvim")
-    autocmd BufEnter,FocusGained,TermOpen,TermEnter,TermLeave term://* setlocal nonumber norelativenumber
-  endif
-augroup END
+" augroup numbertoggle
+  " autocmd!
+  " autocmd BufEnter,FocusGained,InsertLeave * set number relativenumber
+  " autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+  " if has("nvim")
+    " autocmd BufEnter,FocusGained,TermOpen,TermEnter,TermLeave term://* setlocal nonumber norelativenumber
+  " endif
+" augroup END
 
 " Nerd commenter
 let g:NERDSpaceDelims = 1
@@ -126,9 +128,9 @@ nnoremap td :tabclose<cr>
 nnoremap <silent><f9> :w<cr>:source %<cr>
 nnoremap <silent><c-p> <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <silent><c-f> <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <silent><c-n> <cmd>lua require('telescope.builtin').file_browser({depth=3})<cr>
+nnoremap <silent><c-n> <cmd>lua require('telescope').extensions.file_browser.file_browser({depth=3})<cr>
 nnoremap <leader>/ <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>
-nnoremap <leader>ec <cmd>lua require('telescope.builtin').file_browser({cwd="$DOTFILES"})<cr>
+nnoremap <leader>ec <cmd>lua require('telescope').extensions.file_browser.file_browser({cwd="$DOTFILES"})<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 " map <c-leftmouse> <nop>

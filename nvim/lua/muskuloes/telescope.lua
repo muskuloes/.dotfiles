@@ -1,9 +1,10 @@
 local actions = require("telescope.actions")
 local action_layout = require("telescope.actions.layout")
+local fb_actions = require "telescope".extensions.file_browser.actions
 
 require("telescope").setup({
     defaults = {
-        prompt_prefix = "🔍 ",
+        prompt_prefix = " 🔍 ",
         selection_caret = "❯ ",
         color_devicons = true,
         winblend = 0,
@@ -29,7 +30,7 @@ require("telescope").setup({
                 ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
                 ["<C-k>"] = actions.move_selection_previous,
                 ["<C-j>"] = actions.move_selection_next,
-                ["<C-h>"] = actions.which_key,
+                ["<A-h>"] = actions.which_key,
                 ["<C-_>"] = action_layout.toggle_preview,
                 ["<C-p>"] = false,
                 ["<C-n>"] = false,
@@ -45,3 +46,4 @@ require("telescope").setup({
 })
 
 require('telescope').load_extension('fzf')
+require('telescope').load_extension('file_browser')
