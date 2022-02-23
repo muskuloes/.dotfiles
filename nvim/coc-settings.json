@@ -1,7 +1,7 @@
 {
   "suggest.autoTrigger": "always",
   "diagnostic.errorSign": "✗",
-  "python.formatting.provider": "yapf",
+  "python.formatting.provider": "black",
   "yaml.format.enable": true,
   "yaml.schemas": {
     "kubernetes": "/*.yaml"
