@@ -50,9 +50,12 @@ Plug 'fannheyward/telescope-coc.nvim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'mkitt/tabline.vim'
 Plug 'jpalardy/vim-slime'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'lewis6991/spellsitter.nvim'
 call plug#end()
 
 lua require("muskuloes")
+lua require("spellsitter").setup()
 
 filetype plugin on
 set background=dark
@@ -78,12 +81,14 @@ set cursorline
 set cursorcolumn
 set termguicolors
 set number relativenumber
+set laststatus=3
 
 colorscheme gruvbox
 
 autocmd! FileType TelescopeResults setlocal nofoldenable
 autocmd! User TelescopePreviewerLoaded setlocal wrap
 
+highlight WinSeparator guibg=NONE
 highlight Normal guibg=NONE ctermbg=NONE
 highlight TelescopeSelection      guifg=#D79921 gui=bold " Selected item
 highlight TelescopeNormal         guibg=#00000           " Floating windows created by telescope
