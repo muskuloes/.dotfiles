@@ -250,3 +250,7 @@ let g:VM_maps['Find Subword Under'] = '<c-d>'
 nmap   <C-LeftMouse>         <Plug>(VM-Mouse-Cursor)
 nmap   <C-RightMouse>        <Plug>(VM-Mouse-Word)
 nmap   <M-C-RightMouse>      <Plug>(VM-Mouse-Column)
+
+" startify
+let g:startify_change_to_dir = 0
+
