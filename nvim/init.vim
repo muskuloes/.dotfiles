@@ -52,6 +52,7 @@ Plug 'mkitt/tabline.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'lewis6991/spellsitter.nvim'
+Plug 'dart-lang/dart-vim-plugin'
 call plug#end()
 
 lua require("muskuloes")
@@ -141,7 +142,7 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 " map <c-leftmouse> <nop>
 
 " coc
-let g:coc_global_extensions = ['coc-json', 'coc-yaml', 'coc-tsserver', 'coc-sh',  'coc-go', 'coc-vetur', 'coc-rust-analyzer', 'coc-pyright', 'coc-markdownlint', 'coc-elixir', 'coc-css', 'coc-prettier', 'coc-emmet']
+let g:coc_global_extensions = ['coc-json', 'coc-yaml', 'coc-tsserver', 'coc-sh',  'coc-go', 'coc-vetur', 'coc-rust-analyzer', 'coc-pyright', 'coc-markdownlint', 'coc-elixir', 'coc-css', 'coc-prettier', 'coc-emmet', 'coc-flutter']
 let g:coc_filetype_map = {
   \ 'htmldjango': 'html',
   \ }
@@ -232,6 +233,9 @@ let R_pdfviewer  = 'evince'
 
 " Rust
 let g:rustfmt_autosave = 1
+
+" Dart
+let g:dart_format_on_save = 1
 
 " Floaterm
 let g:floaterm_keymap_new    = '<f5>'
