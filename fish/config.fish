@@ -8,8 +8,9 @@ set -gx PATH $PATH /snap/bin /usr/local/go/bin $HOME/bin /home/linuxbrew/.linuxb
 set -gx DOTFILES $HOME/Desktop/dev/dotfiles
 set -gx EDITOR nvim
 set -gx VISUAL ewrap
+set -gx ICONLOOKUP 1
 set -gx NNN_BMS 'u:$HOME/Desktop/uni;w:$HOME/Desktop/work'
-set -gx NNN_PLUG 'o:fzopen;v:imgview;u:getplugs;f:fzcd'
+set -gx NNN_PLUG 'o:fzopen;v:imgview;u:getplugs;f:fzcd;p:preview-tui'
 set -gx NNN_COLORS '2134'
 
 # fzf
@@ -18,7 +19,7 @@ set -gx FZF_DEFAULT_OPTS '--height 40% --bind 'ctrl-/:toggle-preview' --preview-
 set -gx FZF_CTRL_T_OPTS "--preview 'bat --style=numbers --color=always --line-range :500 {}'"
 
 alias vim="nvim"
-alias n="nnn -ex"
+alias n="nnn -eax"
 alias k="kubectl"
 alias r="R"
 
