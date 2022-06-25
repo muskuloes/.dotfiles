@@ -1,0 +1,17 @@
+changeps1: true
+auto_activate_base: false
+show_channel_url: true
+pip_interop_enabled: true
+
+channels:
+  - conda-forge
+  - defaults
+  - r
+
+create_default_packages:
+  - jupyterlab
+  - jupyterlab-lsp
+  - python-lsp-server[all]
+  - jupyterlab_vim
+  - jupyterlab_code_formatter
+  - black
