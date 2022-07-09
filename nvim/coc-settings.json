@@ -21,11 +21,6 @@
       "filetypes": ["sh"],
       "ignoredRootPaths": ["~"]
     },
-    "efm": {
-      "command": "efm-langserver",
-      "args": [],
-      "filetypes": ["vim"]
-    },
     "lua": {
       "command": "lua-lsp",
       "filetypes": ["lua"]

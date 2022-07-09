@@ -1,9 +1,8 @@
 set -x TERM xterm-256color
-set -x CDPATH . $HOME $HOME/Desktop
+set -x CDPATH . $HOME $HOME/develop
 
 
 set -gx PKG_CONFIG_PATH /usr/lib/x86_64-linux-gnu/pkgconfig
-set -gx PYENV_ROOT $HOME/.pyenv
 set -gx PATH $PATH /snap/bin /usr/local/go/bin $HOME/bin /home/linuxbrew/.linuxbrew/bin $HOME/.local/bin $HOME/.krew/bin $HOME/.kubectx $HOME/go/bin $HOME/.cargo/bin $HOME/.yarn/bin $HOME/android-studio/bin $HOME/.luarocks/bin $PYENV_ROOT/bin
 set -gx DOTFILES $HOME/Desktop/dev/dotfiles
 set -gx EDITOR nvim
@@ -31,10 +30,6 @@ alias cat="bat"
 # !! Contents within this block are managed by 'conda init' !!
 eval $HOME/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
-
-# pyenv
-status is-login; and pyenv init --path | source
-status is-interactive; and pyenv init - | source
 
 set -gx LUA_PATH '/home/linuxbrew/.linuxbrew/Cellar/luarocks/3.7.0/share/lua/5.4/?.lua;/home/linuxbrew/.linuxbrew/share/lua/5.4/?.lua;/home/linuxbrew/.linuxbrew/share/lua/5.4/?/init.lua;/home/linuxbrew/.linuxbrew/lib/lua/5.4/?.lua;/home/linuxbrew/.linuxbrew/lib/lua/5.4/?/init.lua;./?.lua;./?/init.lua;/home/muskuloes/.luarocks/share/lua/5.4/?.lua;/home/muskuloes/.luarocks/share/lua/5.4/?/init.lua'
 
