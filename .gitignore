@@ -2,5 +2,6 @@ fish_variables
 fishd.Tuekam
 /* https://github.com/hackerb9/lsix */
 lsix
-*.old
+nvim/plugin
+
 
