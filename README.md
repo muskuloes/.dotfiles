@@ -1,7 +1,7 @@
 # .dotfiles
 
-Setup using [stow](https://www.gnu.org/software/stow/):
+Setup using [GNU Stow](https://www.gnu.org/software/stow/):
 
 ```sh
-stow .
+stow -d ~/.dotfiles -t ~/
 ```
