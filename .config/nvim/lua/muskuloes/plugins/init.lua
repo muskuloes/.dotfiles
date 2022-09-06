@@ -8,7 +8,7 @@ local function packer_use(use)
   use { "kyazdani42/nvim-tree.lua", config = require "muskuloes.plugins.nvim_tree" }
 
   -- Colorscheme
-  use { "ellisonleao/gruvbox.nvim" } --, config = require "muskuloes.plugins.gruvbox" }
+  use { "gruvbox-community/gruvbox" }
 
   use { "windwp/nvim-autopairs", config = require "muskuloes.plugins.autopairs" }
   use { "windwp/nvim-ts-autotag", config = require "muskuloes.plugins.autotag" }
