@@ -1,7 +1,8 @@
 \.git
 \.gitignore
+.inputrc
 README.md
 alacritty
 fusuma
-inputrc
+kitty
 windows
