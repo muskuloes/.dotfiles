@@ -1,7 +1,6 @@
 return function()
   local lspconfig_ok, lspconfig = pcall(require, "lspconfig")
   local cmp_nvim_lsp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-  local null_ls = require "muskuloes.plugins.lsp.null_ls"
 
   if not (lspconfig_ok and cmp_nvim_lsp_ok) then
     return
@@ -54,7 +53,6 @@ return function()
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
-    vim.keymap.set("n", "<leader>f", vim.lsp.buf.formatting, bufopts)
 
     -- Mappings.
     -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -62,35 +60,15 @@ return function()
     vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
     vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
     vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
-    vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts)
   end
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
-  local formatting_augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
   local on_attach = function(client, bufnr)
     client.resolved_capabilities.document_formatting = false
     lsp_keymaps(bufnr)
-    if client.supports_method "textDocument/formatting" then
-      vim.api.nvim_clear_autocmds { group = formatting_augroup, buffer = bufnr }
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        group = formatting_augroup,
-        buffer = bufnr,
-        callback = function()
-          vim.lsp.buf.formatting()
-        end,
-      })
-    end
   end
-
-  local opts = {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }
-
-  null_ls.setup(opts)
 
   lspconfig.pyright.setup {
     on_attach = on_attach,

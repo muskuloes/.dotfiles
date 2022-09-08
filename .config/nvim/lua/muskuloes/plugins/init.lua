@@ -11,6 +11,7 @@ local function packer_use(use)
   use { "gruvbox-community/gruvbox" }
 
   use { "windwp/nvim-autopairs", config = require "muskuloes.plugins.autopairs" }
+
   use { "windwp/nvim-ts-autotag", config = require "muskuloes.plugins.autotag" }
 
   use { "folke/trouble.nvim", config = require "muskuloes.plugins.trouble" }
@@ -51,9 +52,13 @@ local function packer_use(use)
     requires = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      "jose-elias-alvarez/null-ls.nvim",
     },
     config = require "muskuloes.plugins.lsp",
+  }
+
+  use {
+    "jose-elias-alvarez/null-ls.nvim",
+    config = require "muskuloes.plugins.null_ls",
   }
 
   -- Completion

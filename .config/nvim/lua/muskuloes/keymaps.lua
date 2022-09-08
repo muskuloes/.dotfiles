@@ -2,9 +2,9 @@ local map = function(m, k, v)
   vim.keymap.set(m, k, v, { silent = true })
 end
 
-local telescope = function(picker)
+local telescope = function(t)
   return function()
-    require("telescope.builtin")[picker]()
+    require("telescope.builtin")[t.picker](t.opts)
   end
 end
 
@@ -34,11 +34,11 @@ map("n", "<leader><tab>", ":BufferLineCycleNext<cr>")
 map("n", "<leader><s-tab>", ":BufferLineCyclePrev<cr>")
 
 -- Telescope keymaps
-map("n", "<c-p>", telescope "find_files")
-map("n", "<c-f>", telescope "live_grep")
-map("n", "<leader>/", telescope "current_buffer_fuzzy_find")
-map("n", "<leader>fb", telescope "current_buffer_fuzzy_find")
-map("n", "<leader>fh", telescope "help_tags")
+map("n", "<c-p>", telescope { picker = "find_files", opts = { hidden = true } })
+map("n", "<c-f>", telescope { picker = "live_grep", opts = {} })
+map("n", "<leader>/", telescope { picker = "current_buffer_fuzzy_find", opts = {} })
+map("n", "<leader>fb", telescope { picker = "current_buffer_fuzzy_find", opts = {} })
+map("n", "<leader>fh", telescope { picker = "help_tags", opts = {} })
 
 -- Lua
 map("n", "<leader>xx", "<cmd>TroubleToggle<cr>")
@@ -47,6 +47,10 @@ map("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>")
 map("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>")
 map("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>")
 map("n", "gR", "<cmd>TroubleToggle lsp_references<cr>")
+
+map("n", "<leader>f", vim.lsp.buf.formatting)
+
+map("n", "<c-n>", "<cmd>NvimTreeToggle<cr>")
 
 -- Visual --
 -- Stay in indent mode
