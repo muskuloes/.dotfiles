@@ -89,7 +89,7 @@ local function packer_use(use)
 
   use { "sindrets/diffview.nvim" }
 
-  use { "michaelb/sniprun", run = "bash ./install.sh" }
+  use { "michaelb/sniprun", run = "bash ./install.sh", config = require "muskuloes.plugins.sniprun" }
 
   use {
     "folke/which-key.nvim",
