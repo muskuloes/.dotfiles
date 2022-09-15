@@ -89,6 +89,15 @@ local function packer_use(use)
 
   use { "sindrets/diffview.nvim" }
 
+  use { "michaelb/sniprun", run = "bash ./install.sh" }
+
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup()
+    end,
+  }
+
   -- Automatically set up config after cloning packer.nvim
   if PACKER_BOOTSTRAP then
     require("packer").sync()
