@@ -70,6 +70,7 @@ return function()
     lsp_keymaps(bufnr)
   end
 
+  lspconfig.marksman.setup {}
   lspconfig.pyright.setup {
     on_attach = on_attach,
     capabilities = capabilities,
@@ -110,5 +111,7 @@ return function()
 
   mason.setup {}
 
-  mason_lspconfig.setup { ensure_installed = { "pylsp", "sumneko_lua", "tsserver", "jsonls", "rlanguage_server" } }
+  mason_lspconfig.setup {
+    ensure_installed = { "pylsp", "sumneko_lua", "tsserver", "jsonls", "rlanguage_server", "marksman" },
+  }
 end
