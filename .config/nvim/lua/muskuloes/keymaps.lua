@@ -55,6 +55,7 @@ local telescope_cmds = {
   },
   ["<c-p>"] = { telescope { picker = "find_files", opts = { hidden = true } }, "Find files" },
   ["<c-f>"] = { telescope { picker = "live_grep", opts = {} }, "Search through project" },
+  ["<c-b>"] = { "<cmd>Telescope file_browser<cr>", "Browse files" },
 }
 
 local trouble_cmds = {
