@@ -112,6 +112,6 @@ return function()
   mason.setup {}
 
   mason_lspconfig.setup {
-    ensure_installed = { "pylsp", "sumneko_lua", "tsserver", "jsonls", "rlanguage_server", "marksman" },
+    ensure_installed = { "pylsp", "sumneko_lua", "tsserver", "jsonls", "rlanguage_server", "marksman", "bashls" },
   }
 end

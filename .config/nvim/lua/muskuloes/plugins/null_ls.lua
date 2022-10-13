@@ -20,6 +20,7 @@ return function()
     formatting.yamlfmt,
     formatting.markdownlint,
     formatting.prettierd,
+    formatting.shfmt,
     diagnostics.flake8,
     diagnostics.tsc,
     diagnostics.hadolint,
