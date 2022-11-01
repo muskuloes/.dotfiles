@@ -70,10 +70,6 @@ local trouble_cmds = {
   ["gR"] = { "<cmd>TroubleToggle lsp_references<cr>", "References of the word under the cursor from LSP client" },
 }
 
-local format_cmd = {
-  name = "Format",
-  ["<leader>f"] = { vim.lsp.buf.formatting, "Format file" },
-}
 local nvim_tree_cmds = {
   name = "Nvim-tree commands",
   ["<c-n>"] = { "<cmd>NvimTreeToggle<cr>", "Toggle tree" },
@@ -110,7 +106,6 @@ wk.register(resize, { mode = "n" })
 wk.register(telescope_cmds, { mode = "n" })
 wk.register(trouble_cmds, { mode = "n" })
 wk.register(nvim_tree_cmds, { mode = "n" })
-wk.register(format_cmd, { mode = "n" })
 wk.register(sniprun_cmds, { mode = "n" })
 wk.register(sniprun_cmds, { mode = "v" })
 wk.register(indent, { mode = "v" })

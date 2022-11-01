@@ -5,5 +5,7 @@ return function()
     return
   end
 
-  gitsigns.setup()
+  gitsigns.setup {
+    current_line_blame = true,
+  }
 end

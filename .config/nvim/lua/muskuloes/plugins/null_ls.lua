@@ -40,7 +40,7 @@ return function()
         group = formatting_augroup,
         buffer = bufnr,
         callback = function()
-          vim.lsp.buf.formatting()
+          vim.lsp.buf.format { async = true }
         end,
       })
     end

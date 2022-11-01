@@ -1,8 +1,11 @@
 return function()
   local lspconfig_ok, lspconfig = pcall(require, "lspconfig")
   local cmp_nvim_lsp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+  local wk_ok, wk = pcall(require, "whick-key")
 
-  if not (lspconfig_ok and cmp_nvim_lsp_ok) then
+  -- TODO: setup which-key doc
+
+  if not (lspconfig_ok and cmp_nvim_lsp_ok and wk_ok) then
     return
   end
 
@@ -54,6 +57,10 @@ return function()
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
 
+    vim.keymap.set("n", "<leader>ff", function()
+      vim.lsp.buf.format { async = true }
+    end, bufopts)
+
     -- Mappings.
     -- See `:help vim.diagnostic.*` for documentation on any of the below functions
     local opts = { noremap = true, silent = true }
@@ -63,10 +70,10 @@ return function()
   end
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
-  capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+  capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
   local on_attach = function(client, bufnr)
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.documentFormattingProvider = false
     lsp_keymaps(bufnr)
   end
 
@@ -112,6 +119,6 @@ return function()
   mason.setup {}
 
   mason_lspconfig.setup {
-    ensure_installed = { "pylsp", "sumneko_lua", "tsserver", "jsonls", "rlanguage_server", "marksman", "bashls" },
+    ensure_installed = { "pylsp", "sumneko_lua", "tsserver", "jsonls", "marksman", "bashls" },
   }
 end

@@ -98,6 +98,8 @@ local function packer_use(use)
     end,
   }
 
+  use { "quarto-dev/quarto-nvim" }
+
   -- Automatically set up config after cloning packer.nvim
   if PACKER_BOOTSTRAP then
     require("packer").sync()
