@@ -67,6 +67,10 @@ return function()
     vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
     vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
     vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+
+    vim.api.nvim_create_user_command("Format", function()
+      vim.lsp.buf.format { async = true }
+    end, { nargs = 0 })
   end
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()

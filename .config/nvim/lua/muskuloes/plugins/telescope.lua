@@ -27,7 +27,7 @@ return function()
 
       layout_config = {
         horizontal = {
-          width = 0.80,
+          width = 0.85,
           prompt_position = "top",
           preview_width = 0.60,
         },
