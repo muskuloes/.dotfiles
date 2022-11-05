@@ -1,11 +1,11 @@
 return function()
   local lspconfig_ok, lspconfig = pcall(require, "lspconfig")
   local cmp_nvim_lsp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-  local wk_ok, wk = pcall(require, "whick-key")
+  -- local wk_ok, wk = pcall(require, "whick-key")
 
   -- TODO: setup which-key doc
 
-  if not (lspconfig_ok and cmp_nvim_lsp_ok and wk_ok) then
+  if not (lspconfig_ok and cmp_nvim_lsp_ok) then
     return
   end
 
@@ -119,6 +119,6 @@ return function()
   mason.setup {}
 
   mason_lspconfig.setup {
-    ensure_installed = { "pylsp", "sumneko_lua", "tsserver", "jsonls", "marksman", "bashls" },
+    ensure_installed = { "pyright", "sumneko_lua", "tsserver", "jsonls", "marksman", "bashls" },
   }
 end
