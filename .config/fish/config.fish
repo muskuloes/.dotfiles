@@ -41,6 +41,4 @@ alias cat="bat"
 eval /home/muskuloes/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
 
-set -gx LUA_PATH '/home/linuxbrew/.linuxbrew/Cellar/luarocks/3.7.0/share/lua/5.4/?.lua;/home/linuxbrew/.linuxbrew/share/lua/5.4/?.lua;/home/linuxbrew/.linuxbrew/share/lua/5.4/?/init.lua;/home/linuxbrew/.linuxbrew/lib/lua/5.4/?.lua;/home/linuxbrew/.linuxbrew/lib/lua/5.4/?/init.lua;./?.lua;./?/init.lua;/home/muskuloes/.luarocks/share/lua/5.4/?.lua;/home/muskuloes/.luarocks/share/lua/5.4/?/init.lua'
-
-set -gx LUA_CPATH '/home/linuxbrew/.linuxbrew/lib/lua/5.4/?.so;/home/linuxbrew/.linuxbrew/lib/lua/5.4/loadall.so;./?.so;/home/muskuloes/.luarocks/lib/lua/5.4/?.so'
+starship init fish | source
