@@ -98,7 +98,7 @@ local function packer_use(use)
     end,
   }
 
-  use { "quarto-dev/quarto-nvim" }
+  use { "quarto-dev/quarto-nvim", config = require "muskuloes.plugins.quarto" }
 
   -- Automatically set up config after cloning packer.nvim
   if PACKER_BOOTSTRAP then
