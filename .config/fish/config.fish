@@ -7,6 +7,7 @@ set -gx PATH $PATH /snap/bin /usr/local/go/bin $HOME/bin /home/linuxbrew/.linuxb
 
 set -gx WINHOME (wslpath (wslvar USERPROFILE))
 set -gx CDPATH . $HOME $HOME/repos $WINHOME
+source $XDG_CONFIG_HOME/fish/private.fish
 
 set -gx EDITOR nvim
 set -gx VISUAL ewrap
