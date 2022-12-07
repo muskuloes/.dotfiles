@@ -1,7 +1,6 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-# Inserts a blank line between shell prompts
 add_newline = true
 
 format = """$directory
@@ -12,7 +11,6 @@ right_format = """$all"""
 truncation_length = 1
 fish_style_pwd_dir_length = 1
 
-# Replace the "❯" symbol in the prompt with "➜"
 [character]
 success_symbol = "[❯](bold green)[❯](bold red)[❯](bold yellow)"
 error_symbol = "[❯](bold red)[❯](bold red)[❯](bold red)"
@@ -22,6 +20,5 @@ vimcmd_replace_symbol = "[❮](bold purple)[❮](bold purple)[❮](bold purple)"
 vimcmd_visual_symbol = "[❮](bold yellow)[❮](bold yellow)[❮](bold yellow)"
 
 
-# Disable the package module, hiding it from the prompt completely
 [package]
 disabled = true
