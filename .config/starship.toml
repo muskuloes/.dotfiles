@@ -22,7 +22,7 @@ vimcmd_visual_symbol = "[❮](bold yellow)[❮](bold yellow)[❮](bold yellow)"
 [conda]
 symbol = ""
 style = "bold green"
-format = "[$symbol$environment ]($style)"
+format = "[\\($symbol$environment\\) ]($style)"
 
 [cmd_duration]
 min_time = 120_000
