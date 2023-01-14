@@ -19,6 +19,13 @@ vimcmd_replace_one_symbol = "[❮](bold purple)[❮](bold purple)[❮](bold purp
 vimcmd_replace_symbol = "[❮](bold purple)[❮](bold purple)[❮](bold purple)"
 vimcmd_visual_symbol = "[❮](bold yellow)[❮](bold yellow)[❮](bold yellow)"
 
+[conda]
+symbol = ""
+style = "bold green"
+format = "[$symbol$environment ]($style)"
+
+[cmd_duration]
+min_time = 120_000
 
 [package]
 disabled = true
