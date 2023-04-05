@@ -6,7 +6,7 @@ set -gx PKG_CONFIG_PATH /usr/lib/x86_64-linux-gnu/pkgconfig
 set -gx PATH $PATH /snap/bin /usr/local/go/bin $HOME/bin /home/linuxbrew/.linuxbrew/bin /home/linuxbrew/.linuxbrew/sbin $HOME/.local/bin $HOME/.krew/bin $HOME/.kubectx $HOME/go/bin $HOME/.cargo/bin $HOME/.yarn/bin $HOME/android-studio/bin $HOME/.luarocks/bin $PYENV_ROOT/bin
 
 set -gx WINHOME (wslpath (wslvar USERPROFILE))
-set -gx CDPATH . $HOME $HOME/repos $WINHOME
+set -gx CDPATH . $HOME $HOME/repos $WINHOME $WINHOME/Documents
 source $XDG_CONFIG_HOME/fish/private.fish
 
 set -gx EDITOR nvim
