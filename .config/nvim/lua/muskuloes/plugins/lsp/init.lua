@@ -94,7 +94,7 @@ return function()
     on_attach = on_attach,
     capabilities = capabilities,
   }
-  lspconfig.sumneko_lua.setup {
+  lspconfig.lua_ls.setup {
     on_attach = on_attach,
     capabilities = capabilities,
     settings = {
@@ -104,6 +104,9 @@ return function()
         },
         workspace = {
           library = vim.api.nvim_get_runtime_file("", true),
+        },
+        telemetry = {
+          enable = false,
         },
       },
     },
@@ -123,6 +126,6 @@ return function()
   mason.setup {}
 
   mason_lspconfig.setup {
-    ensure_installed = { "pyright", "sumneko_lua", "tsserver", "jsonls", "marksman", "bashls" },
+    ensure_installed = { "pyright", "lua_ls", "tsserver", "jsonls", "marksman", "bashls" },
   }
 end

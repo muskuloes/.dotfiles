@@ -100,6 +100,14 @@ local function packer_use(use)
 
   use { "quarto-dev/quarto-nvim", config = require "muskuloes.plugins.quarto" }
 
+  -- install without yarn or npm
+  use {
+    "iamcco/markdown-preview.nvim",
+    run = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  }
+
   -- Automatically set up config after cloning packer.nvim
   if PACKER_BOOTSTRAP then
     require("packer").sync()
