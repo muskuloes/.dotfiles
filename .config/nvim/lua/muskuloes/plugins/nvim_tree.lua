@@ -7,11 +7,11 @@ return function()
 
   nvim_tree.setup {
     disable_netrw = true,
-    open_on_setup = false,
-    ignore_ft_on_setup = {
-      "startify",
-      "alpha",
-    },
+    -- open_on_setup = false,
+    -- ignore_ft_on_setup = {
+    --   "startify",
+    --   "alpha",
+    -- },
     diagnostics = {
       enable = true,
     },

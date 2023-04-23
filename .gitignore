@@ -4,3 +4,4 @@ fishd.Tuekam
 /* https://github.com/hackerb9/lsix */
 lsix
 .config/nvim/plugin
+.luarc.json
