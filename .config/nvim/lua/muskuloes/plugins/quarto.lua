@@ -5,10 +5,20 @@ return function()
   end
 
   quarto.setup {
+    debug = false,
     closePreviewOnExit = true, -- close preview terminal on closing of qmd file buffer
+    lspFeatures = { "r", "python", "julia", "bash" },
+    chunks = "curly",
     diagnostics = {
-      enabled = false, -- enable diagnostics for embedded languages
-      languages = { "python", "r", "julia" },
+      enabled = true, -- enable diagnostics for embedded languages
+      triggers = { "BufWritePost" },
+    },
+    completion = {
+      enabled = true,
+    },
+    keymap = {
+      hover = "K",
+      definition = "gd",
     },
   }
 end

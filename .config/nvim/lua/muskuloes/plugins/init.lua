@@ -98,7 +98,7 @@ local function packer_use(use)
     end,
   }
 
-  -- use { "quarto-dev/quarto-nvim", config = require "muskuloes.plugins.quarto" }
+  use { "quarto-dev/quarto-nvim", config = require "muskuloes.plugins.quarto" }
 
   -- install without yarn or npm
   use {

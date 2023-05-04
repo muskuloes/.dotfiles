@@ -15,6 +15,13 @@ vim.g.maplocalleader = " "
 
 vim.keymap.set("v", "p", "_dP", { silent = true })
 
+local quarto_cmds = {
+  name = "Quarto commands",
+  ["<leader>"] = {
+    ["qp"] = { "<cmd>QuartoPreview<cr>", "Open quarto preview" },
+  },
+}
+
 local window_navigation = {
   name = "Window navigation",
   ["<c-j>"] = { "<c-w><c-j>", "Move to window below" },
@@ -101,6 +108,7 @@ local move_block_text = {
 }
 
 wk.register(window_navigation, { mode = "n" })
+wk.register(quarto_cmds, { mode = "n" })
 wk.register(buf_tab_navigation, { mode = "n" })
 wk.register(resize, { mode = "n" })
 wk.register(telescope_cmds, { mode = "n" })
