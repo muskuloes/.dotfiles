@@ -69,6 +69,10 @@ local function packer_use(use)
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-emoji",
+      "hrsh7th/cmp-calc",
+      "jc-doyle/cmp-pandoc-references",
+      "kdheepak/cmp-latex-symbols",
       "onsails/lspkind-nvim",
     },
     config = require "muskuloes.plugins.cmp",
@@ -98,7 +102,7 @@ local function packer_use(use)
     end,
   }
 
-  use { "quarto-dev/quarto-nvim", config = require "muskuloes.plugins.quarto" }
+  use { "quarto-dev/quarto-nvim", requires = { "jmbuhr/otter.nvim" }, config = require "muskuloes.plugins.quarto_nvim" }
 
   -- install without yarn or npm
   use {
