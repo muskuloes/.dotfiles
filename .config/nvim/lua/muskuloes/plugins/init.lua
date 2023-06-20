@@ -102,15 +102,20 @@ local function packer_use(use)
     end,
   }
 
-  use { "quarto-dev/quarto-nvim", requires = { "jmbuhr/otter.nvim" }, config = require "muskuloes.plugins.quarto_nvim" }
+  -- use { "quarto-dev/quarto-nvim", requires = { "jmbuhr/otter.nvim" }, config = require "muskuloes.plugins.quarto_nvim" }
 
-  -- install without yarn or npm
+  --install without yarn or npm
   use {
     "iamcco/markdown-preview.nvim",
     run = function()
       vim.fn["mkdp#util#install"]()
     end,
   }
+
+  -- use {
+  --   "jpalardy/vim-slime",
+  --   config = require "muskuloes.plugins.slime",
+  -- }
 
   -- Automatically set up config after cloning packer.nvim
   if PACKER_BOOTSTRAP then

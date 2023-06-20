@@ -5,6 +5,14 @@ return function()
     return
   end
 
-  local config = lualine.get_config()
+  -- local config = lualine.get_config()
+  local config = {
+    options = {
+      theme = "gruvbox",
+    },
+    sections = {
+      lualine_b = { "branch", "diff" },
+    },
+  }
   lualine.setup(config)
 end
