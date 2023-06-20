@@ -5,3 +5,4 @@ fishd.Tuekam
 lsix
 .config/nvim/plugin
 .luarc.json
+.npmrc
