@@ -37,6 +37,8 @@ alias jp="jupyter lab --no-browser"
 alias ls="exa --long --header --git --group"
 alias cat="bat"
 
+fish_ssh_agent
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 eval /home/muskuloes/miniconda3/bin/conda "shell.fish" "hook" $argv | source
