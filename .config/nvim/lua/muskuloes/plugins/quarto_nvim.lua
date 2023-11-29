@@ -22,6 +22,8 @@ return function()
     keymap = {
       hover = "K",
       definition = "gd",
+      rename = "<leader>lR",
+      references = "gr",
     },
   }
 end

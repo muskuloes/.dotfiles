@@ -103,7 +103,7 @@ local function packer_use(use)
     end,
   }
 
-  -- use { "quarto-dev/quarto-nvim", requires = { "jmbuhr/otter.nvim" }, config = require "muskuloes.plugins.quarto_nvim" }
+  use { "quarto-dev/quarto-nvim", requires = { "jmbuhr/otter.nvim" }, config = require "muskuloes.plugins.quarto_nvim" }
 
   --install without yarn or npm
   use {
