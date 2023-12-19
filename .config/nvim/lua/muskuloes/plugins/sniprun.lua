@@ -7,6 +7,6 @@ return function()
 
   sniprun.setup {
     display = { "VirtualTextOk", "TerminalWithCode" },
-    repl_enable = { "Python3_original" },
+    repl_enable = { "Python3_original", "R_original" },
   }
 end

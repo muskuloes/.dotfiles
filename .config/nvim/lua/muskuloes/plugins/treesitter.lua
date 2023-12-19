@@ -1,6 +1,9 @@
 return function()
   local ok, ts_configs = pcall(require, "nvim-treesitter.configs")
 
+  require('ts_context_commentstring').setup {} 
+  vim.g.skip_ts_context_commentstring_module = true
+
   if not ok then
     return
   end

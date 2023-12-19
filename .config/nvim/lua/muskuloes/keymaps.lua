@@ -85,6 +85,7 @@ local nvim_tree_cmds = {
 local sniprun_cmds = {
   name = "Code runner",
   ["<leader>l"] = { "<cmd>SnipRun<cr>", "Run line" },
+  ["<leader>c"] = { "<cmd>SnipClose<cr>", "SnipClose" },
 }
 
 local indent = {
