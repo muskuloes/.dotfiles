@@ -113,6 +113,8 @@ local function packer_use(use)
     end,
   }
 
+  use { "jalvesaq/Nvim-R" }
+
   -- use {
   --   "jpalardy/vim-slime",
   --   config = require "muskuloes.plugins.slime",
