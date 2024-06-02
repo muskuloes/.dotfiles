@@ -114,6 +114,7 @@ local function packer_use(use)
   }
 
   use { "jalvesaq/Nvim-R" }
+  use { "lervag/vimtex", config = require "muskuloes.plugins.vimtex" }
 
   -- use {
   --   "jpalardy/vim-slime",
