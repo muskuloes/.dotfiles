@@ -82,6 +82,7 @@ return function()
       { name = "pandoc_references" },
       { name = "emoji" },
       { name = "calc" },
+      { name = "cmp_r" },
     },
     view = {
       entries = "native",

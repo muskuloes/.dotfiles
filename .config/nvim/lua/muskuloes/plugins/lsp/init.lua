@@ -90,7 +90,7 @@ return function()
     on_attach = on_attach,
     capabilities = capabilities,
   }
-  lspconfig.tsserver.setup {
+  lspconfig.ts_ls.setup {
     on_attach = on_attach,
     capabilities = capabilities,
   }
@@ -126,6 +126,6 @@ return function()
   mason.setup {}
 
   mason_lspconfig.setup {
-    ensure_installed = { "pyright", "lua_ls", "tsserver", "jsonls", "marksman", "bashls" },
+    ensure_installed = { "pyright", "lua_ls", "ts_ls", "jsonls", "marksman", "bashls" },
   }
 end
