@@ -67,6 +67,7 @@ return function()
           emoji = "[Emoji]",
           calc = "[Calc]",
           otter = "[Otter]",
+          cmp_r = "[R]"
         },
       },
     },
