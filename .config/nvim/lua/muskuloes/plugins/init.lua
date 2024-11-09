@@ -1,16 +1,16 @@
-local function packer_use(use)
-  use { "goolord/alpha-nvim", config = require "muskuloes.plugins.alpha" }
+return {
+  { "goolord/alpha-nvim", config = require "muskuloes.plugins.configs.alpha" },
 
-  use { "windwp/nvim-autopairs", config = require "muskuloes.plugins.autopairs" }
+  { "windwp/nvim-autopairs", opts = require "muskuloes.plugins.configs.autopairs" },
 
-  use { "windwp/nvim-ts-autotag", config = require "muskuloes.plugins.autotag" }
+  { "windwp/nvim-ts-autotag", config = require "muskuloes.plugins.configs.autotag" },
 
-  use { "akinsho/bufferline.nvim", config = require "muskuloes.plugins.bufferline" }
+  { "akinsho/bufferline.nvim", config = require "muskuloes.plugins.configs.bufferline" },
 
   -- Completion
-  use {
+  {
     "hrsh7th/nvim-cmp",
-    requires = {
+    dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
@@ -21,139 +21,98 @@ local function packer_use(use)
       "kdheepak/cmp-latex-symbols",
       "onsails/lspkind-nvim",
     },
-    config = require "muskuloes.plugins.cmp",
-  }
+    config = require "muskuloes.plugins.configs.cmp",
+  },
 
-  use { "R-nvim/cmp-r", config = require "muskuloes.plugins.cmp_r" }
+  { "R-nvim/cmp-r", config = require "muskuloes.plugins.configs.cmp_r" },
 
-  use { "numToStr/Comment.nvim", config = require "muskuloes.plugins.comment" }
+  { "numToStr/Comment.nvim", config = require "muskuloes.plugins.configs.comment" },
 
-  use { "sindrets/diffview.nvim" }
+  { "sindrets/diffview.nvim" },
 
-  use {
+  {
     "j-hui/fidget.nvim",
     tag = "legacy",
     config = function()
       require("fidget").setup {}
     end,
-  }
+  },
 
-  use "rafamadriz/friendly-snippets"
+  "rafamadriz/friendly-snippets",
 
-  use { "lewis6991/gitsigns.nvim", config = require "muskuloes.plugins.gitsigns" }
+  { "lewis6991/gitsigns.nvim", config = require "muskuloes.plugins.configs.gitsigns" },
 
-  use "ellisonleao/glow.nvim"
+  "ellisonleao/glow.nvim",
 
   -- Colorscheme
-  use { "gruvbox-community/gruvbox" }
+  { "gruvbox-community/gruvbox" },
 
-  use "lewis6991/impatient.nvim"
+  "lewis6991/impatient.nvim",
 
   -- LSP
-  use {
+  {
     "neovim/nvim-lspconfig",
-    requires = {
+    dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
     },
-    config = require "muskuloes.plugins.lsp",
-  }
+    config = require "muskuloes.plugins.configs.lsp",
+  },
 
   -- Status and tab line
-  use {
+  {
     "nvim-lualine/lualine.nvim",
-    config = require "muskuloes.plugins.lualine",
-  }
+    config = require "muskuloes.plugins.configs.lualine",
+  },
 
-  use { "L3MON4D3/LuaSnip", requires = { "saadparwaiz1/cmp_luasnip" } }
+  { "L3MON4D3/LuaSnip", dependencies = { "saadparwaiz1/cmp_luasnip" } },
 
-  use {
+  {
     "jose-elias-alvarez/null-ls.nvim",
-    config = require "muskuloes.plugins.null_ls",
-  }
+    config = require "muskuloes.plugins.configs.null_ls",
+  },
 
-  use { "kyazdani42/nvim-tree.lua", config = require "muskuloes.plugins.nvim_tree" }
+  { "kyazdani42/nvim-tree.lua", config = require "muskuloes.plugins.configs.nvim_tree" },
 
-  use "kyazdani42/nvim-web-devicons"
+  "kyazdani42/nvim-web-devicons",
 
-  use "JoosepAlviste/nvim-ts-context-commentstring"
+  "JoosepAlviste/nvim-ts-context-commentstring",
 
-  use "wbthomason/packer.nvim"
+  "nvim-treesitter/playground",
 
-  use "nvim-treesitter/playground"
+  "nvim-lua/plenary.nvim",
 
-  use "nvim-lua/plenary.nvim"
+  { "quarto-dev/quarto-nvim", dependencies = { "jmbuhr/otter.nvim" }, config = require "muskuloes.plugins.configs.quarto_nvim" },
 
-  use { "quarto-dev/quarto-nvim", requires = { "jmbuhr/otter.nvim" }, config = require "muskuloes.plugins.quarto_nvim" }
+  { "R-nvim/R.nvim", config = require "muskuloes.plugins.configs.r" },
 
-  use { "R-nvim/R.nvim", config = require "muskuloes.plugins.r" }
+  { "michaelb/sniprun", build = "bash ./install.sh", config = require "muskuloes.plugins.configs.sniprun" },
 
-  use { "michaelb/sniprun", run = "bash ./install.sh", config = require "muskuloes.plugins.sniprun" }
-
-  use {
+  {
     "nvim-telescope/telescope.nvim",
-    requires = {
+    dependencies = {
       "nvim-telescope/telescope-file-browser.nvim",
-      { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
-    config = require "muskuloes.plugins.telescope",
-  }
+    config = require "muskuloes.plugins.configs.telescope",
+  },
 
-  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = require "muskuloes.plugins.treesitter" }
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", config = require "muskuloes.plugins.configs.treesitter" },
 
-  use { "folke/trouble.nvim", config = require "muskuloes.plugins.trouble" }
+  { "folke/trouble.nvim", config = require "muskuloes.plugins.configs.trouble" },
 
-  use {
+  {
     "folke/which-key.nvim",
     config = function()
       require("which-key").setup()
     end,
-  }
+  },
 
   --install without yarn or npm
-  use {
+  {
     "iamcco/markdown-preview.nvim",
-    run = function()
+    build = function()
       vim.fn["mkdp#util#install"]()
     end,
-  }
-
-  -- Automatically set up config after cloning packer.nvim
-  if PACKER_BOOTSTRAP then
-    require("packer").sync()
-  end
-end
-
-local fn = vim.fn
-
--- Automatically install packer
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = fn.system {
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  }
-  vim.notify "Installing packer close and reopen Neovim..."
-  vim.cmd [[packadd packer.nvim]]
-end
-
--- Autocommand that reloads neovim whenever you save the init.lua file
-local packer_augroup = vim.api.nvim_create_augroup("PackerUserConfig", { clear = true })
-
-vim.api.nvim_create_autocmd("BufWritePost", {
-  group = packer_augroup,
-  pattern = { "**/nvim/**/plugins/init.lua" },
-  command = "source <afile> | PackerSync",
-})
-
-local ok, packer = pcall(require, "packer")
-
-if not ok then
-  return
-end
-
-return packer.startup(packer_use)
+  },
+}

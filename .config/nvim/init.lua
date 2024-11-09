@@ -1,4 +1,5 @@
 require "muskuloes.keymaps"
 require "muskuloes.options"
-require "muskuloes.plugins"
+-- require "muskuloes.plugins"
+require "muskuloes.lazy"
 require "muskuloes.colorscheme"

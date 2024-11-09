@@ -9,7 +9,7 @@ return function()
   end
 
   ts_configs.setup {
-    ensure_installed = "all",
+    ensure_installed = { "javascript", "json", "lua", "markdown", "markdown_inline", "python", "r", "rnoweb", "tmux", "typescript", "yaml" },
     sync_install = false,
     ingore_install = { "" },
     autopairs = {
@@ -18,6 +18,6 @@ return function()
     autotag = { enable = true },
     highlight = { enable = true, disable = { "" }, additional_vim_regex_highlighting = true },
     indent = { enable = true, disable = { "yaml" } },
-    context_commentstring = { enable = true },
+    ts_context_commentstring = { enable = true },
   }
 end
