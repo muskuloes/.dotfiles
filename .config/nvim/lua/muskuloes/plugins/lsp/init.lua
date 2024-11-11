@@ -86,6 +86,10 @@ return function()
     on_attach = on_attach,
     capabilities = capabilities,
   }
+  lspconfig.r_language_server.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
   lspconfig.rust_analyzer.setup {
     on_attach = on_attach,
     capabilities = capabilities,
@@ -126,6 +130,6 @@ return function()
   mason.setup {}
 
   mason_lspconfig.setup {
-    ensure_installed = { "pyright", "lua_ls", "ts_ls", "jsonls", "marksman", "bashls" },
+    ensure_installed = { "bashls", "jsonls", "lua_ls", "marksman", "pyright", "r_language_server", "ts_ls" },
   }
 end

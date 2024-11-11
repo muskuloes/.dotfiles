@@ -9,7 +9,7 @@ return function()
   end
 
   ts_configs.setup {
-    ensure_installed = "all",
+    ensure_installed = { "javascript", "json", "lua", "markdown", "markdown_inline", "python", "r", "rnoweb", "tmux", "typescript", "yaml" },
     sync_install = false,
     ingore_install = { "" },
     autopairs = {
