@@ -43,8 +43,8 @@ local buf_tab_navigation = {
 local resize = {
   name = "Resize",
   ["<leader>"] = {
-    w = { "<c-w>_", "Set current window height to maximum" },
-    h = { "<c-w>|", "Set current window width to maximum" },
+    h = { "<c-w>_", "Set current window height to maximum" },
+    w = { "<c-w>|", "Set current window width to maximum" },
     z = { "<c-w>=", "Make all windows equally high and wide" },
   },
   ["<c-up>"] = { "<cmd>resize +2<cr>", "Increase current window height by 2" },
